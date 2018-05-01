@@ -87,12 +87,15 @@ func buildTemplates(key string, checkNames []string, initConfigs, instances []in
 	for idx := range checkNames {
 		instance := integration.Data(instances[idx])
 
-		templates = append(templates, integration.Config{
-			Name:          checkNames[idx],
-			InitConfig:    integration.Data(initConfigs[idx]),
-			Instances:     []integration.Data{instance},
-			ADIdentifiers: []string{key},
-		})
+		templates = append(templates, check.NewConfig(
+			checkNames[idx],                    // name
+			[]check.ConfigData{instance},       // instances
+			check.ConfigData(initConfigs[idx]), // initConfigs
+			nil,           // MetricConfig
+			nil,           // LogsConfig
+			[]string{key}, // ADIdentifiers
+			"",            // provider
+		))
 	}
 	return templates
 }
