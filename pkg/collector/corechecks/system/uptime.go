@@ -8,7 +8,7 @@ package system
 import (
 	"github.com/DataDog/datadog-agent/pkg/collector/check"
 	core "github.com/DataDog/datadog-agent/pkg/collector/corechecks"
-	log "github.com/cihub/seelog"
+	"github.com/DataDog/datadog-agent/pkg/util/log"
 	"github.com/shirou/gopsutil/host"
 
 	"github.com/DataDog/datadog-agent/pkg/aggregator"

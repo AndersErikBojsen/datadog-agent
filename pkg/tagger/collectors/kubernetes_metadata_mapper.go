@@ -10,7 +10,7 @@ package collectors
 import (
 	"strings"
 
-	log "github.com/cihub/seelog"
+	"github.com/DataDog/datadog-agent/pkg/util/log"
 	"github.com/ericchiang/k8s/api/v1"
 	metav1 "github.com/ericchiang/k8s/apis/meta/v1"
 

@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/DataDog/datadog-agent/pkg/collector/check"
-	log "github.com/cihub/seelog"
+	"github.com/DataDog/datadog-agent/pkg/util/log"
 
 	"gopkg.in/yaml.v2"
 )
@@ -190,7 +190,7 @@ func (c *FileConfigProvider) collectEntry(file os.FileInfo, path string, checkNa
 	}
 
 	delete(c.Errors, checkName) // noop if entry is nonexistant
-	log.Debug("Found valid configuration in file:", absPath)
+	log.Debug("Found valid configuration in file: ", absPath)
 	return entry
 }
 
