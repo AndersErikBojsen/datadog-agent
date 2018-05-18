@@ -1,5 +1,6 @@
 #!/bin/bash
 
+printf '=%.0s' {0..79}
 set -ex
 
 cd $(dirname $0)
